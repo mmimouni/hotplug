@@ -1,0 +1,12 @@
+hotplug
+
+A way to use hot script replacement in your NodeJS projects.
+
+
+var hot = require('hotplug');
+
+const ROOT = require('fs').realpathSync('.');
+
+hot.setup( ROOT );
+
+hot.plug('hot/sample.js', function(mod) { mod.apply("hello"); });
